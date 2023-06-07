@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -p1a | sort -d --ignore='.*' | awk '{printf "%s%s", $0, (NR%2==0 ? ",\n" : ",")}'
+ls -la | awk '{if ($9 ~ /^[0-9a-zA-Z]/) print $9 (substr($0, length($0)) == "/" ? "" : ",")}' | sort -df -t '/' -k 2
