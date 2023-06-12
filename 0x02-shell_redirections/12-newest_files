@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lt | grep -v '^total' | head -n 10 | sort
+ls -lt | tail -n +2 | head -n 10
