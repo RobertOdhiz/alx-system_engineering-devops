@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -mindepth 1 -type d \( ! -iname ".*" \) | grep -c
+find . -type d -name '.*' -o -type d ! -name '.*' | wc -l
