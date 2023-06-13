@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lt | head -nt
+ls -t | grep -v 'd' | head -n 10
