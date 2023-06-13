@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $PATH | grep -o ':' | wc -l
+echo $PATH | grep -o ':' | ADD="wc -l" | SUM=$(($ADD+1)) | echo $SUM
