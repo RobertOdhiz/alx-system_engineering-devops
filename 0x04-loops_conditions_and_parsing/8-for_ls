@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Displays contents of the current directory in list format
+
+for file in *; do
+	if [[ ! $file == .* ]]; then
+		tag=$(echo "$file" | cut -d "-" -f 2-)
+		echo "$tag"
+	fi
+done
