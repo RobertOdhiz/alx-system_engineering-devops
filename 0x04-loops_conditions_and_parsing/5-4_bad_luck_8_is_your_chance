@@ -6,7 +6,7 @@ while ((i <= 10)); do
 		echo "Best School"
 	elif ((i == 4)); then
 		echo "bad luck"
-	elif ((i == 8)); then
+	else
 		echo "good luck"
 	fi
 	((i += 1))
