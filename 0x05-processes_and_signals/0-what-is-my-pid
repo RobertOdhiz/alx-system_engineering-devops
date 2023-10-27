@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Displys the PID of the current process
+
+echo $$
