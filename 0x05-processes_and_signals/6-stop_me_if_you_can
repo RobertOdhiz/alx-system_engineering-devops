@@ -2,4 +2,4 @@
 # Kills the Infinity and beyond script
 
 # Terminating the process using pkill
-pkill -15 "bash ./4-to_infinity_and_beyond"
+pkill -15 -f "bash ./4-to_infinity_and_beyond"
