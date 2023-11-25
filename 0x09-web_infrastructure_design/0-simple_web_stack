@@ -1,14 +1,21 @@
-Infrastructure image - https://drive.google.com/file/d/1lxp7K42hESZDMJp05zkz7xigm0a-YFMG/view?usp=sharing
+Infrastructure image 
+=========================================================================================================================================
+
+https://drive.google.com/file/d/1lxp7K42hESZDMJp05zkz7xigm0a-YFMG/view?usp=sharing
+
+------------------------------------------------------------------------------------------------------------------------------------------
 Some notes
-	A server - Is a computer or system that provides services or resources to other computers,known as clients over a network.
-	Role of domain Name - It is a human-readable label assigned to an IP address that makes it easier to access the website. The DNS records(A and CNAME records) help in translating the domain name to the server's IP.
-	www.foobar.com is a CNAME(Canonical Name) record that points to the A record of foobar.com. It is an elias for the domain. 
-	The web server(Nginx) handles HTTP requests, serving static content directly, and forwarding dynamic content requests to the application server.
-	The application server executes the applications code and generating dynamic content. It communicates with the Web server to process dynamic content requests.
-	The database(MySQL) is used to store and retrieve data for the application. It is where information is stored.
-	To communicate with the computer, the server uses HTTP protocal. When the client requests the website,their browser sends an HTTP request to the server, and the server responds with the requested content.
----------------------------------------------------------------------------------------
-some issues with this infrastructure
-	SPOF - The entire Website depends on a single server, if the server goes doen the entire website becomes inaccessible. To address this introduce redundancy such as load balancers.
-	Downtime and maintenance - During maintenance the website will experience downtime, thus consider introducing multiple servers with rolling deployments.
-	Scalability - The current infrastructure may struggle to handle a significant number of traffic.Solution may include, adding multiple servers, having a load balancer or replicating the database.
+------------------------------------------------------------------------------------------------------------------------------------------
+	- A server Is a computer or system that provides services or resources to other computers,known as clients over a network.
+	- Role of domain Name - It is a human-readable label assigned to an IP address that makes it easier to access the website. The DNS records(A and CNAME records) help in translating the domain name to the server's IP.
+	- www.foobar.com is a CNAME(Canonical Name) record that points to the A record of foobar.com. It is an elias for the domain. 
+	- The web server(Nginx) handles HTTP requests, serving static content directly, and forwarding dynamic content requests to the application server.
+	- The application server executes the applications code and generating dynamic content. It communicates with the Web server to process dynamic content requests.
+	- The database(MySQL) is used to store and retrieve data for the application. It is where information is stored.
+	- To communicate with the computer, the server uses HTTP protocal. When the client requests the website,their browser sends an HTTP request to the server, and the server responds with the requested content.
+---------------------------------------------------------------------------------------------------------------------------------------
+Some issues with this infrastructure
+-----------------------------------------------------------------------------------------------------------------------------------------
+	- SPOF - The entire Website depends on a single server, if the server goes doen the entire website becomes inaccessible. To address this introduce redundancy such as load balancers.
+	- Downtime and maintenance - During maintenance the website will experience downtime, thus consider introducing multiple servers with rolling deployments.
+	- Scalability - The current infrastructure may struggle to handle a significant number of traffic.Solution may include, adding multiple servers, having a load balancer or replicating the database.
