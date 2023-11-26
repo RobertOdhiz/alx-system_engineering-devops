@@ -1,0 +1,22 @@
+Infrastructure Design
+----------------------------------------------------------------------------
+Firewalls - They control incoming and outgoing network Traffic based on an organization's previously established security policies. Adds an extra layer to protect the servers from unauthorized access and potential attacks
+SSL Certificate Termination at Load Balancer - Decrypts HTTPS tTraffic at the load balancer. This enhances performance by offloading SSL decryption and simplifies SSL management.
+Monitoring Clients - Collect Data on the health and Performance of Servers. They identify and resolve issues proactively, ensuring optimal performance and availability.
+-----------------------------------------------------------------------------
+Specifics and Explanation
+------------------------------------------------------------------------------
+Firewalls - Firewalls control and monitor incoming and outgoing network traffic based on predetermined security rules. They protect the servers from unauthorized access, ensuring the infrastructure's security.
+
+HTTPS Traffic - Serving traffic over HTTPS encrypts data transmitted between the client and the server, ensuring confidentiality and integrity. This is crucial for protecting sensitive information like user credentials.
+
+Monitoring - Monitoring tools collect data on server health, performance, and potential issues. This allows administrators to identify and address problems before they impact users.
+
+------------------------------------------------------------------------------
+Issues
+------------------------------------------------------------------------------
+SSL Termination at Load Balancer - While terminating SSL at the load balancer improves performance, it could expose decrypted data within the internal network. However, this risk can be mitigated by implementing secure communication channels between the load balancer and backend servers.
+
+Single MySQL Server for Writes - A single MySQL server for writes can become a bottleneck and a single point of failure. If this server fails, it disrupts write operations, impacting the availability and reliability of the website.
+
+Uniform Servers (DB, Web, App) - While uniformity simplifies management, it can lead to a lack of diversity in the infrastructure. If a common flaw or vulnerability is exploited, it could affect all servers simultaneously. Diversification can enhance resilience against certain types of attacks.
