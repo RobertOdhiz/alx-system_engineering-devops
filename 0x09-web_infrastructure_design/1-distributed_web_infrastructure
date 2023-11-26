@@ -1,0 +1,24 @@
+Infrastructure Design
+------------------------------------------------------------------------------------
+Load Balancer(Haproxy) - DIstributes incoming traffic among multiple servers for improved performance, scalability and fault tolerance. Load balancing ensures even distribution of requests to multiple servers preventing overload on a single server and enhances the websiites availability and reliability.
+
+Web Server(Nginx) - Serves Static content and handles HTTP requests from clients.
+
+Application Server - Runs the application's logic and processes dynamic content. Seperating the web and application servers allows for efficient resource utilization, scalability and ease of updates.
+
+----------------------------------------------------------------------------
+Specifics and Explanations
+----------------------------------------------------------------------------
+HAproxy Load Balancer
+Configured with the Active-Active setup. All servers are deemed avtive and efficient spliting of tasks.
+
+For an Active-passive setup, One server is used while the rest are on standby and are only used when the working one fails.
+
+MySQL Dtabase: Primary Node - Handles Write operations, Replica Node - handles read operations and mirrors data on the Primary Node
+
+----------------------------------------------------------------------------
+Issues
+----------------------------------------------------------------------------
+SPOF - A single load balancer is a SPOF and if it fails the entire system might experience redundancies and Doowntime
+Security Issues - No firewall exposes servers to unauthorized access and potential security threats. No HTTPS leaves data transmission unencrypted posing a security Risk.
+Monitoring - No monitoring hinders proactive issue detection and resolution.
