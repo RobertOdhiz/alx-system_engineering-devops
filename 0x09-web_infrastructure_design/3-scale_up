@@ -1,0 +1,18 @@
+Infrastructure Design
+-----------------------------------------------------------------------------
+An extra load balancer Reduces even more traffic and reduces chances of redundancies if one fails. They are both configured using the Round Robin algorithm and also work in the same way.
+
+Separating the database server ensures data integrity, security, and scalability. It also allows for dedicated resource allocation to handle database operations efficiently.
+
+Isolating the application server from the web server ensures better scalability and easier updates. It allows for optimizing resources based on specific application requirements.
+
+-----------------------------------------------------------------------------
+Specifics and Explanations
+-----------------------------------------------------------------------------
+HAproxy Load Balancer Cluster - Load balancing distributes incoming network traffic across multiple servers to prevent overload and improve availability. Clustering HAproxy ensures that if one load balancer fails, the other takes over, ensuring continuous service.
+
+Web Server - Separating the web server allows for efficient handling of static content, better utilization of resources, and scaling based on web traffic without affecting the application server.
+
+Application Server - Isolating the application logic in a dedicated server facilitates better resource management, scalability, and maintenance. It also allows for fine-tuning the server environment based on application requirements.
+
+Database Server - Separating the database server ensures optimal performance, security, and data integrity. It allows for the implementation of specific configurations and optimizations tailored to database operations.
